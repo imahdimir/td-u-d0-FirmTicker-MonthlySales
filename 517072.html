@@ -1,0 +1,583 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head id="ctl00_Head1"><title>
+	
+</title><link href="../css/Main.css" rel="stylesheet" type="text/css"><link href="../css/fepsProductV1.css" rel="stylesheet" type="text/css">
+   
+    <!--[if lt IE 7]>
+	<link href="../css/IE6_new_style.css" type="text/css" rel="stylesheet" />
+	<![endif]-->
+
+    <script language="javascript" type="text/javascript" src="../js/PKI.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/Common.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+
+    <script language="javascript" type="text/javascript">
+
+        function btnCancelClick() {
+            window.close();
+        }
+
+        function btnNextClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex < document.getElementById("ctl00_ddlTable").length - 1)
+                document.getElementById("ctl00_ddlTable").selectedIndex += 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = 0;
+        }
+
+        function btnPrevClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex > 0)
+                document.getElementById("ctl00_ddlTable").selectedIndex -= 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = document.getElementById("ctl00_ddlTable").length - 1;
+        }
+
+        //function CalcPer(txbNewValue, txbOldValue, txbChangePer) {
+        //    Change = '--';
+        //    a = parseInt(DeformatCurrency(document.getElementById(txbNewValue).value));
+        //    b = parseInt(DeformatCurrency(document.getElementById(txbOldValue).value));
+        //    if (a * b > 0) {
+        //        Change = (a - b) * 100.0 / b;
+        //        Change = Math.round(Change);
+        //    }
+        //    formatPosNeg(txbChangePer, Change);
+        //}
+
+
+        function getDocWidth() {
+            var D = document;
+            return Math.max(
+                D.body.scrollWidth, D.documentElement.scrollWidth,
+                D.body.offsetWidth, D.documentElement.offsetWidth,
+                D.body.clientWidth, D.documentElement.clientWidth
+            );
+        }
+
+        function getDocHeight() {
+            var D = document;
+            return Math.max(
+                D.body.scrollHeight, D.documentElement.scrollHeight,
+                D.body.offsetHeight, D.documentElement.offsetHeight,
+                D.body.clientHeight, D.documentElement.clientHeight
+            );
+        }
+
+
+    </script>
+
+    
+<meta http-equiv="Cache - Control" content="no - cache, no - store, must - revalidate">
+<meta http-equiv="Pragma" content="no - cache">
+<meta http-equiv="Expires" content="0"></head>
+<body>
+    <form name="aspnetForm" method="post" action="" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	
+	
+</div>
+    <div id="divLoadingBg" style="display: none; z-index: 1000000; position: fixed; width: 100%;
+        top: 0px; bottom: 0px; height: expression(getDocHeight()); background-image: url('../Images/progressbg.png');">
+        <div id="divLoading" style="position: fixed; width: 140px; top: 300px; left: 45%;
+            padding: 5px; background-color: White; font-size: 9px;">
+            <img src="../Images/InProgress1.gif" border="0" alt="">
+            &nbsp;
+            <span id="ctl00_lblLoadingMessage" style="font-size:X-Small;">لطفاً چند لحظه صبر کنید...</span>
+        </div>
+    </div>
+    <div class="html_format_header">
+        <div class="clear" style="height: 12px;">
+        </div>
+        <div class="html_format_header_icon">
+            <img src="../imgs/header_icon.png" alt="icon">
+        </div>
+        <h1 id="ctl00_h1MasterTitle">گزارش فعالیت ماهانه</h1>
+        <div class="ddlReportWrapper">
+            <select name="ctl00$ddlTable" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ddlTable\',\'\')', 0)" id="ctl00_ddlTable" class="label" style="color:Red;width:50%;">
+	<option selected="selected" value="1000004">گزارش فعالیت ماهانه
+
+</option></select>
+            
+            
+        <div title="صفحه بعدی" class="next_report" style="float: left;" onclick="btnNextClick();"></div><div title="صفحه قبلی" class="prev_report" style="float: left;" onclick="btnPrevClick();"></div></div>
+        <a id="ctl00_hlChangeLanguage" class="eng" href="Decision.aspx?LetterSerial=95s6Y7MB6ZdCQ0ArEfX0lA%3d%3d&amp;rt=4&amp;let=58&amp;ct=0&amp;lng=en-us" style="font-family:Tahoma;">EN</a>
+        <div class="clear" style="height: 10px;">
+        </div>
+    </div>
+    <input name="ctl00$hdfThumbPrint" type="hidden" id="ctl00_hdfThumbPrint">
+    <div class="clear" style="height: 15px;">
+    </div>
+    <div class="symbol_and_name">
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divCompanyCaption" class="lable">شرکت:</div>
+                <div class="varios">
+                    <span id="ctl00_txbCompanyName" class="label" style="color:#C04000;">واسپاري ملت</span>
+                    
+                    <span id="ctl00_CustomValidator1" style="color:Red;font-weight:bold;display:none;visibility:hidden;">تاریخ نامعتبر</span>
+                    
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divListedCapitalCaption" class="lable">سرمایه ثبت شده:</div>
+                <div class="varios">
+                    <span id="ctl00_lblListedCapital" class="label" style="color:#C04000;">800,000</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divSymbolCaption" class="lable">نماد:</div>
+                <div class="varios">
+                    <span id="ctl00_lblDisplaySymbol" class="label" style="color:#C04000;"></span>
+                    <span id="ctl00_txbSymbol" class="label" style="color:#C04000;">ولملت</span>
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divUnauthorizedCapital" class="lable">سرمایه ثبت نشده:</div>
+                <div class="varios">
+                    <span id="ctl00_txbUnauthorizedCapital" class="label" style="color:#C04000;">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divIsicCaption" class="lable">کد صنعت (ISIC):</div>
+                <div class="varios">
+                    <span id="ctl00_lblISIC" class="label" style="color:#C04000;">650901</span>
+                </div>
+            </div>
+            <div class="text_holder">
+                <div style="margin: 5px 4px;">
+                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>
+                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>
+                    <span id="ctl00_lblEndTo" class="label">منتهی به</span>
+                    <span id="ctl00_lblPeriodEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1397/11/30</bdo></span>
+                    <span id="ctl00_lblIsAudited" class="label" style="display:none;">(حسابرسی نشده)</span>
+                </div>
+            </div>
+        </div>  
+         <div class="text_holder">
+            <div id="ctl00_divYearEndToDateCaption" class="lable">سال مالی منتهی به:</div>
+            <div class="varios">
+                <span id="ctl00_lblYearEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1397/12/29</bdo></span>
+            </div>
+        </div>      
+        <div class="text_holder">
+            <div id="ctl00_divCompanyStateCaption" class="lable">وضعیت ناشر:</div>
+            <div class="varios">
+                <span id="ctl00_lblCompanyState" class="label" style="color:#C04000;">پذيرفته شده در بورس تهران</span>
+            </div>
+        </div>
+        <div style="clear: both;">
+        </div>
+    </div>
+    
+<style type="text/css">
+    .label
+    {
+        font-size: 8pt;
+        font-family: tahoma;
+    }
+</style>
+<div id="ctl00_ucSignature1_pnlMain" class="main_note" style="background-color:#C1E2B4;">
+    <div class="verify">
+       
+    
+    </div>
+    <div class="noteholder">
+        <img alt="information" src="../imgs/inforation.png">
+        <span id="ctl00_ucSignature1_lblSignature" class="signature" style="color:DarkGreen;">اطلاعات نمایش داده شده با اطلاعات امضا شده مطابقت دارد</span>
+        <div class="clear"></div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+    <div class="clear" style="height: 5px;">
+    </div>
+   <div class="errorHolder">
+        <span id="ctl00_lblError" class="Error" style="color:DarkRed;font-weight:bold;"></span>
+    </div>
+   <input type="hidden" name="ctl00$hdfVersion" id="ctl00_hdfVersion" value="0">
+   <div id="ctl00_divPriceNote" class="note_price">
+        <p id="ctl00_pPriceNote">کلیه مبالغ درج شده به میلیون ریال می باشد</p>
+    </div>
+   <div class="note_price_Excel">
+    <input type="image" name="ctl00$ibtnExport" id="ctl00_ibtnExport" class="Hidden" src="../Images/ExportToExcel.jpg" alt="Export To Excel" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ibtnExport&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="height:20px;border-width:0px;display:block;">
+    </div>
+    <div class="clear">
+    </div>
+    
+    
+
+    <div style="width: 90%; margin: 0 auto;">
+        <div>
+            
+
+<br>
+
+
+        </div>
+        <span id="ctl00_cphBody_lblError"></span>
+
+        
+                
+
+<style type="text/css">
+    .gv th {
+        vertical-align: middle;
+    }
+</style>
+
+<div includeinexcel="true">
+    <table id="ctl00_cphBody_ucLeasing1_Table1" cellpadding="0" cellspacing="0" width="100%" align="right" dir="rtl">
+	<tbody><tr>
+		<td>
+                <span id="ctl00_cphBody_ucLeasing1_lblProductionMsg" class="notify error" style="display:none;"></span>
+            </td>
+	</tr>
+	<tr>
+		<td style="padding-top: 20px;">
+                <h3>
+                    <span id="ctl00_cphBody_ucLeasing1_lblAchievedRevenueCaption">درآمدهای محقق شده</span></h3>
+            </td>
+	</tr>
+	<tr>
+		<td>
+                <table style="width: 100%" align="center" class="gv">
+                    <tbody><tr>
+                        <th style="width: 50%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblRevenueTitle">شرح</span>
+                        </th>
+                        <th style="width: 25%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblDuringAmount">درآمد محقق شده طی ماه</span>
+                        </th>
+                        <th style="width: 25%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblTotalAmount">جمع  درآمد محقق شده از ابتدای سال مالی تا پایان ماه جاری</span>
+                        </th>
+                    </tr>
+                </tbody></table>
+            </td>
+	</tr>
+	<tr>
+		<td>
+                <div>
+                    <div>
+			<table class="gv" cellspacing="0" rules="all" border="1" id="ctl00_cphBody_ucLeasing1_dgAchievedRevenue" style="border-style:Solid;width:100%;border-collapse:collapse;cursor: pointer">
+				<tbody><tr>
+					<td style="width:50%;">
+                                    <input type="hidden" name="ctl00$cphBody$ucLeasing1$dgAchievedRevenue$ctl02$hdfRevenueType" id="ctl00_cphBody_ucLeasing1_dgAchievedRevenue_ctl02_hdfRevenueType" value="1">
+                                    <span>سود اقساط مربوط به قراردادهای سال جاری</span>
+                                </td><td align="center" style="width:25%;">8,747</td><td align="center" style="width:25%;">76,249</td>
+				</tr><tr>
+					<td style="width:50%;">
+                                    <input type="hidden" name="ctl00$cphBody$ucLeasing1$dgAchievedRevenue$ctl03$hdfRevenueType" id="ctl00_cphBody_ucLeasing1_dgAchievedRevenue_ctl03_hdfRevenueType" value="2">
+                                    <span>سود اقساط انتقالی از یکسال قبل</span>
+                                </td><td align="center" style="width:25%;">32,735</td><td align="center" style="width:25%;">182,733</td>
+				</tr><tr>
+					<td style="width:50%;">
+                                    <input type="hidden" name="ctl00$cphBody$ucLeasing1$dgAchievedRevenue$ctl04$hdfRevenueType" id="ctl00_cphBody_ucLeasing1_dgAchievedRevenue_ctl04_hdfRevenueType" value="3">
+                                    <span>سود اقساط انتقالی از دو سال قبل</span>
+                                </td><td align="center" style="width:25%;">3,603</td><td align="center" style="width:25%;">50,172</td>
+				</tr><tr>
+					<td style="width:50%;">
+                                    <input type="hidden" name="ctl00$cphBody$ucLeasing1$dgAchievedRevenue$ctl05$hdfRevenueType" id="ctl00_cphBody_ucLeasing1_dgAchievedRevenue_ctl05_hdfRevenueType" value="4">
+                                    <span>سود اقساط انتقالی از سه سال قبل</span>
+                                </td><td align="center" style="width:25%;">450</td><td align="center" style="width:25%;">9,211</td>
+				</tr><tr>
+					<td style="width:50%;">
+                                    <input type="hidden" name="ctl00$cphBody$ucLeasing1$dgAchievedRevenue$ctl06$hdfRevenueType" id="ctl00_cphBody_ucLeasing1_dgAchievedRevenue_ctl06_hdfRevenueType" value="5">
+                                    <span>سود اقساط انتقالی از سالهای قبل</span>
+                                </td><td align="center" style="width:25%;">1,568</td><td align="center" style="width:25%;">19,329</td>
+				</tr><tr>
+					<td style="width:50%;">
+                                    <input type="hidden" name="ctl00$cphBody$ucLeasing1$dgAchievedRevenue$ctl07$hdfRevenueType" id="ctl00_cphBody_ucLeasing1_dgAchievedRevenue_ctl07_hdfRevenueType" value="6">
+                                    <span>درآمد حاصل از فروش نقدی</span>
+                                </td><td align="center" style="width:25%;">0</td><td align="center" style="width:25%;">0</td>
+				</tr><tr>
+					<td style="width:50%;">
+                                    <input type="hidden" name="ctl00$cphBody$ucLeasing1$dgAchievedRevenue$ctl08$hdfRevenueType" id="ctl00_cphBody_ucLeasing1_dgAchievedRevenue_ctl08_hdfRevenueType" value="7">
+                                    <span>سایر درآمد حاصل از عملیات لیزینگ</span>
+                                </td><td align="center" style="width:25%;">492</td><td align="center" style="width:25%;">24,763</td>
+				</tr><tr class="lightBlueBg">
+					<td style="width:50%;">جمع</td><td align="center" style="width:25%;">47,595</td><td align="center" style="width:25%;">362,457</td>
+				</tr>
+			</tbody></table>
+		</div>
+                </div>
+            </td>
+	</tr>
+	<tr>
+		<td style="padding-top: 20px;">
+                <h3>
+                    <span id="ctl00_cphBody_ucLeasing1_lblAchievedFinancingCostCaption">هزینه تامین منابع مالی عملیات لیزینگ محقق شده</span></h3>
+            </td>
+	</tr>
+	<tr>
+		<td>
+                <table style="width: 100%" align="center" class="gv">
+                    <tbody><tr>
+                        <th rowspan="2" style="width: 30%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblCostTitle">شرح</span>
+                        </th>
+                        <th colspan="2" style="width: 35%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblAchievedFinancingCost">هزینه مالی محقق شده</span>
+                        </th>
+                        <th colspan="2" style="width: 35%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblTakenFacility">تسهیلات اخذ شده</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="width: 17.5%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblAchievedAmountDuringMonth">هزینه محقق شده طی ماه</span>
+                        </th>
+                        <th style="width: 17.5%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblAchievedAmountDuringYear">جمع هزینه محقق شده از ابتدای سال مالی تا پایان ماه جاری</span>
+                        </th>
+                        <th style="width: 17.5%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblTakenFacilityRemainDuringMonth">مانده در ابتدای ماه</span>
+                        </th>
+                        <th style="width: 17.5%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblTakenFacilityRemainDuringYear">مانده در پایان ماه</span>
+                        </th>
+                    </tr>
+                </tbody></table>
+            </td>
+	</tr>
+	<tr>
+		<td>
+                <div>
+                    <div>
+			<table class="gv" cellspacing="0" rules="all" border="1" id="ctl00_cphBody_ucLeasing1_dgAchievedCost" style="border-style:Solid;width:100%;border-collapse:collapse;cursor: pointer">
+				<tbody><tr>
+					<td style="width:30%;">
+                                    <input type="hidden" name="ctl00$cphBody$ucLeasing1$dgAchievedCost$ctl02$hdfCostType" id="ctl00_cphBody_ucLeasing1_dgAchievedCost_ctl02_hdfCostType" value="1">
+                                    <span>هزینه تامین منابع مالی از محل تسهیلات بانکی</span>
+                                </td><td align="center" style="width:17.5%;">19,230</td><td align="center" style="width:17.5%;">229,309</td><td align="center" style="width:17.5%;">1,298,979</td><td align="center" style="width:17.5%;">1,228,534</td>
+				</tr><tr>
+					<td style="width:30%;">
+                                    <input type="hidden" name="ctl00$cphBody$ucLeasing1$dgAchievedCost$ctl03$hdfCostType" id="ctl00_cphBody_ucLeasing1_dgAchievedCost_ctl03_hdfCostType" value="2">
+                                    <span>هزینه تامین منابع مالی از محل اوراق مشارکت و صکوک</span>
+                                </td><td align="center" style="width:17.5%;">0</td><td align="center" style="width:17.5%;">0</td><td align="center" style="width:17.5%;">0</td><td align="center" style="width:17.5%;">0</td>
+				</tr><tr>
+					<td style="width:30%;">
+                                    <input type="hidden" name="ctl00$cphBody$ucLeasing1$dgAchievedCost$ctl04$hdfCostType" id="ctl00_cphBody_ucLeasing1_dgAchievedCost_ctl04_hdfCostType" value="3">
+                                    <span>هزینه تامین منابع مالی از محل وجوه دریافتی از مشتریان</span>
+                                </td><td align="center" style="width:17.5%;">0</td><td align="center" style="width:17.5%;">0</td><td align="center" style="width:17.5%;">0</td><td align="center" style="width:17.5%;">0</td>
+				</tr><tr>
+					<td style="width:30%;">
+                                    <input type="hidden" name="ctl00$cphBody$ucLeasing1$dgAchievedCost$ctl05$hdfCostType" id="ctl00_cphBody_ucLeasing1_dgAchievedCost_ctl05_hdfCostType" value="4">
+                                    <span>هزینه تامین منابع مالی از محل سایر منابع</span>
+                                </td><td align="center" style="width:17.5%;">0</td><td align="center" style="width:17.5%;">0</td><td align="center" style="width:17.5%;">0</td><td align="center" style="width:17.5%;">0</td>
+				</tr><tr class="lightBlueBg">
+					<td style="width:30%;">جمع</td><td align="center" style="width:17.5%;">19,230</td><td align="center" style="width:17.5%;">229,309</td><td align="center" style="width:17.5%;">1,298,979</td><td align="center" style="width:17.5%;">1,228,534</td>
+				</tr>
+			</tbody></table>
+		</div>
+                </div>
+            </td>
+	</tr>
+	<tr>
+		<td style="padding-top: 20px;">
+                <h3>
+                    <span id="ctl00_cphBody_ucLeasing1_lblDelegatedGoodsSummaryCaption">صورت خلاصه کالاهای واگذار شده</span></h3>
+            </td>
+	</tr>
+	<tr>
+		<td>
+                <table style="width: 100%" align="center" class="gv">
+                    <tbody><tr>
+                        <th rowspan="3" style="width: 25%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblDelegatedGoodsTitle">شرح</span>
+                        </th>
+                        <th rowspan="2" colspan="2">
+                            <span id="ctl00_cphBody_ucLeasing1_lblRemainedEarlyMonth">مانده در ابتدای ماه</span>
+                        </th>
+                        <th colspan="4">
+                            <span id="ctl00_cphBody_ucLeasing1_lblDuringMonth">طی ماه</span>
+                        </th>
+                        <th rowspan="2" colspan="2">
+                            <span id="ctl00_cphBody_ucLeasing1_lblRemainedLateMonth">مانده در پایان ماه</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <span id="ctl00_cphBody_ucLeasing1_lblProceedFacilitiesDuringMonth">تسهیلات اعطایی طی ماه</span>
+                        </th>
+                        <th colspan="2">
+                            <span id="ctl00_cphBody_ucLeasing1_lblSettledFacilitiesDuringMonth">تسهیلات تسویه شده طی ماه</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="width: 5%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblCountEarlyMonth">تعداد تسهیلات اعطایی</span>
+                        </th>
+                        <th style="width: 13.75%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblAmountEarlyMonth">مبلغ تسهیلات اعطایی</span>
+                        </th>
+                        <th style="width: 5%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblCountDuringMonth">تعداد تسهیلات اعطایی</span>
+                        </th>
+                        <th style="width: 13.75%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblAmountDuringMonth">مبلغ تسهیلات اعطایی</span>
+                        </th>
+                        <th style="width: 5%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblCountSettledDuringMonth">تعداد تسهیلات اعطایی تسویه شده</span>
+                        </th>
+                        <th style="width: 13.75%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblAmountSettledDuringMonth">مبلغ تسهیلات اعطایی تسویه شده</span>
+                        </th>
+                        <th style="width: 5%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblCountLateMonth">تعداد تسهیلات اعطایی</span>
+                        </th>
+                        <th style="width: 13.75%;">
+                            <span id="ctl00_cphBody_ucLeasing1_lblAmountLateMonth">مبلغ تسهیلات اعطایی</span>
+                        </th>
+                    </tr>
+                </tbody></table>
+            </td>
+	</tr>
+	<tr>
+		<td>
+                <div>
+                    <div>
+			<table class="gv" cellspacing="0" rules="all" border="1" id="ctl00_cphBody_ucLeasing1_dgDelegatedGoodsSummary" style="border-style:Solid;width:100%;border-collapse:collapse;cursor: pointer">
+				<tbody><tr>
+					<td style="width:25%;">
+                                    <input type="hidden" name="ctl00$cphBody$ucLeasing1$dgDelegatedGoodsSummary$ctl02$hdnGoodsRef" id="ctl00_cphBody_ucLeasing1_dgDelegatedGoodsSummary_ctl02_hdnGoodsRef" value="35">
+                                    <span>خودروهاي سبک (داخلي - وارداتي)</span>
+                                </td><td align="center" style="width:5%;">19,088</td><td align="center" style="width:13.75%;">2,536,145</td><td align="center" style="width:5%;">5</td><td align="center" style="width:13.75%;">2,410</td><td align="center" style="width:5%;">287</td><td align="center" style="width:13.75%;">11,839</td><td align="center" style="width:5%;">18,806</td><td align="center" style="width:13.75%;">2,526,716</td>
+				</tr><tr>
+					<td style="width:25%;">
+                                    <input type="hidden" name="ctl00$cphBody$ucLeasing1$dgDelegatedGoodsSummary$ctl03$hdnGoodsRef" id="ctl00_cphBody_ucLeasing1_dgDelegatedGoodsSummary_ctl03_hdnGoodsRef" value="36">
+                                    <span>خودروهاي سنگين</span>
+                                </td><td align="center" style="width:5%;">38</td><td align="center" style="width:13.75%;">1,407,861</td><td align="center" style="width:5%;">0</td><td align="center" style="width:13.75%;">0</td><td align="center" style="width:5%;">0</td><td align="center" style="width:13.75%;">3,636</td><td align="center" style="width:5%;">38</td><td align="center" style="width:13.75%;">1,404,225</td>
+				</tr><tr>
+					<td style="width:25%;">
+                                    <input type="hidden" name="ctl00$cphBody$ucLeasing1$dgDelegatedGoodsSummary$ctl04$hdnGoodsRef" id="ctl00_cphBody_ucLeasing1_dgDelegatedGoodsSummary_ctl04_hdnGoodsRef" value="37">
+                                    <span>تجهيزات و ...</span>
+                                </td><td align="center" style="width:5%;">83</td><td align="center" style="width:13.75%;">338,294</td><td align="center" style="width:5%;">2</td><td align="center" style="width:13.75%;">800</td><td align="center" style="width:5%;">41</td><td align="center" style="width:13.75%;">23,417</td><td align="center" style="width:5%;">44</td><td align="center" style="width:13.75%;">315,677</td>
+				</tr><tr class="lightBlueBg">
+					<td style="width:25%;">جمع</td><td align="center" style="width:5%;">19,209</td><td align="center" style="width:13.75%;">4,282,300</td><td align="center" style="width:5%;">7</td><td align="center" style="width:13.75%;">3,210</td><td align="center" style="width:5%;">328</td><td align="center" style="width:13.75%;">38,892</td><td align="center" style="width:5%;">18,888</td><td align="center" style="width:13.75%;">4,246,618</td>
+				</tr>
+			</tbody></table>
+		</div>
+                </div>
+            </td>
+	</tr>
+	<tr>
+		<td style="height: 20px"></td>
+	</tr>
+</tbody></table>
+
+</div>
+            
+        <div class="clear" style="height: 20px;"></div>
+        
+        <div class="clear" style="height: 20px;"></div>
+        <fieldset>
+            <legend>
+                <span id="ctl00_cphBody_lblDescMonth" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1397/11/30</span></legend>
+            <br>
+            <span id="txbDescMonth"></span>
+        </fieldset>
+        <div class="clear" style="height: 20px;"></div>
+        <fieldset>
+            <legend>
+                <span id="ctl00_cphBody_lblDescYear" style="color:graytext;font-size:Small;">کادر توضیحی مربوط اطلاعات تجمعی از ابتدای سال تا پایان مورخ 1397/11/30</span></legend>
+            <br>
+            <span id="txbDescYear"></span>
+        </fieldset>
+        <div class="clear" style="height: 20px;">
+        </div>
+        <div style="width: 90%; margin-left: auto; margin-right: auto;">
+        </div>
+    </div>
+
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ctl00_CustomValidator1"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_CustomValidator1 = document.all ? document.all["ctl00_CustomValidator1"] : document.getElementById("ctl00_CustomValidator1");
+ctl00_CustomValidator1.controltovalidate = "ctl00_txbPeriodEndToDate";
+ctl00_CustomValidator1.errormessage = "تاریخ نامعتبر";
+ctl00_CustomValidator1.evaluationfunction = "CustomValidatorEvaluateIsValid";
+ctl00_CustomValidator1.clientvalidationfunction = "DateValidator";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('ctl00_CustomValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_CustomValidator1'));
+}
+//]]>
+</script>
+</form>
+
+</body></html>
